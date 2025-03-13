@@ -1,4 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" version="3.1">
   <display-name>minproject</display-name>
+  
+  
+  
+  
+<!-- *******notice****** -->
+  <servlet>
+  	<servlet-name>notice_write</servlet-name>  
+  	<servlet-class>notice.notice_write</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_write</servlet-name>
+  	<url-pattern>/notice/notice_write.do</url-pattern>  
+  </servlet-mapping>
+  
+  
 </web-app>
