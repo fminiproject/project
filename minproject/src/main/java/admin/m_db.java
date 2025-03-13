@@ -8,7 +8,7 @@ public class m_db {
 	
 	public static Connection getConnection() throws Exception {
 		String db_driver = "com.mysql.jdbc.Driver";
-		String db_url = "jdbc:mysql://kbsn.or.kr:3306/choong_a"; 
+		String db_url = "jdbc:mysql://kbsn.or.kr:3306/choong_f"; 
 		String db_user = "chang_f";
 		String db_passswd = "f2025chang";
 				
