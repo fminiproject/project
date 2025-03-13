@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import admin.m_db;
 
-public class hp_join_select {
+public class hp_basic_select {
 	Connection con = null;
 	PreparedStatement ps = null;
 	String sql = "";
@@ -17,11 +17,12 @@ public class hp_join_select {
 	ArrayList<String> data = null;
 	ArrayList<ArrayList<String>> alldata = null;
 	
-	public ArrayList<ArrayList<String>> hp_datalist_se(){
+	public ArrayList<ArrayList<String>> hp_datalist_bs(){
 		
 		try {
 			this.con = this.db.getConnection();
-			this.sql = "select hidx,hp_title,ad_mail,use_point,join_point,join_lv";
+			this.sql = "select bidx,corp_name,busi_num,ceo_name,ceo_num,busi_report_num,busi_num_more"
+					+ "corp_addnum,corp_add,info_ad_name,info_ad_mail";
 			this.ps = this.con.prepareStatement(this.sql);
 			this.rs = this.ps.executeQuery();
 			
@@ -29,12 +30,17 @@ public class hp_join_select {
 			
 			while(this.rs.next()) {
 				this.data = new ArrayList<String>();
-				this.data.add(this.rs.getString("hidx"));
-				this.data.add(this.rs.getString("hp_title"));
-				this.data.add(this.rs.getString("ad_mail"));
-				this.data.add(this.rs.getString("use_point"));
-				this.data.add(this.rs.getString("join_point"));
-				this.data.add(this.rs.getString("join_lv"));
+				this.data.add(this.rs.getString("bidx"));
+				this.data.add(this.rs.getString("corp_name"));
+				this.data.add(this.rs.getString("busi_num"));
+				this.data.add(this.rs.getString("ceo_name"));
+				this.data.add(this.rs.getString("ceo_num"));
+				this.data.add(this.rs.getString("busi_report_num"));
+				this.data.add(this.rs.getString("busi_num_more"));
+				this.data.add(this.rs.getString("corp_addnum"));
+				this.data.add(this.rs.getString("corp_add"));
+				this.data.add(this.rs.getString("info_ad_name"));
+				this.data.add(this.rs.getString("info_ad_mail"));
 				
 				this.alldata.add(this.data);
 			}
