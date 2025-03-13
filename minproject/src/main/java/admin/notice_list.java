@@ -1,4 +1,4 @@
-package notice;
+package admin;
 
 import java.io.IOException;
 

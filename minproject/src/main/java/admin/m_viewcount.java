@@ -1,9 +1,7 @@
-package notice;
+package admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
-import admin.m_db;
 
 public class m_viewcount {
 	Connection con = null;

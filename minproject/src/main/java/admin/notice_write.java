@@ -1,4 +1,4 @@
-package notice;
+package admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,8 +36,6 @@ public class notice_write extends HttpServlet {
 			
 			if(n_yn==null) {
 				n_yn = "N";
-			}else {
-				n_yn = "Y";
 			}
 			
 			long filesize = n_filenm.getSize();  //파일용량 가져옴
@@ -53,7 +51,7 @@ public class notice_write extends HttpServlet {
 			if(this.result > 0) {
 				this.pw.write("<script>"
 								+"alert('공지가 등록되었습니다');"
-								+"location.href='./login.do';"
+								+"location.href='./notice_list.do';"
 								+"</script>");
 				
 			}else {

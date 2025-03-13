@@ -15,5 +15,14 @@
   	<url-pattern>/notice/notice_write.do</url-pattern>  
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>notice_list</servlet-name>  
+  	<servlet-class>notice.notice_list</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_list</servlet-name>
+  	<url-pattern>/notice/notice_list.do</url-pattern>  
+  </servlet-mapping>
+  
   
 </web-app>

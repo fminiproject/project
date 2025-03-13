@@ -1,12 +1,10 @@
-package notice;
+package admin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.Part;
-
-import admin.m_db;
 
 public class m_insert {
 	Connection con = null;
@@ -47,8 +45,6 @@ public class m_insert {
 		}
 		
 		return this.result;
-		
-		
 	}
 	
 	public Integer insert_notice_withf(String n_yn, String n_subject, String n_writer, String n_content, Part n_filenm, HttpServletRequest request) {
@@ -56,7 +52,7 @@ public class m_insert {
 			this.con = this.db.getConnection();
 			
 			String filenm = n_filenm.getSubmittedFileName();  //파일명 가져옴
-			String url = request.getServletContext().getRealPath("notice_file");  //첨부파일 저장될 경로 지정
+			String url = request.getServletContext().getRealPath("/notice_file/");  //첨부파일 저장될 경로 지정
 			n_filenm.write(url+filenm);
 			
 			this.sql = "insert into notice (nidx,n_yn,n_subject,n_writer,n_filenm,n_file,n_content,n_date) values ('0',?,?,?,?,?,?,now())";

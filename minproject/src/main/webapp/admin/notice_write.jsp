@@ -34,9 +34,11 @@
     </div>
 
 </nav>
-<main class="maincss">
-  	<%@ include file="./notice_write_veiw.jsp" %>
-</main>
+
+<!-- 글작성 페이지 부분 -->
+<%@ include file="./notice_write_veiw.jsp" %>
+<!-- 글작성 페이지 부분 -->
+
 <footer class="main_copyright">
     <div>
         Copyright ⓒ 2024 shopbag All rights reserved.
