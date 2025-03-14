@@ -1,3 +1,4 @@
+/*
 package hp_setting;
 
 import java.io.IOException;
@@ -9,10 +10,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-public class hp_join_joinok extends HttpServlet {
+public class hp_joinok extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	PrintWriter pw = null;
-	hp_join_insert hi = new hp_join_insert(); 
+	hp_insert hi = new hp_insert();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("utf-8");	// front-end에서 한글이 전송될 경우에만 사용
@@ -40,3 +41,4 @@ public class hp_join_joinok extends HttpServlet {
 	}
 
 }
+*/

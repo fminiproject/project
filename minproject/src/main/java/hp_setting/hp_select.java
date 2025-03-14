@@ -7,7 +7,7 @@ import java.util.ArrayList;
 
 import admin.m_db;
 
-public class hp_basic_select {
+public class hp_select {
 	Connection con = null;
 	PreparedStatement ps = null;
 	String sql = "";
@@ -21,8 +21,7 @@ public class hp_basic_select {
 		
 		try {
 			this.con = this.db.getConnection();
-			this.sql = "select bidx,corp_name,busi_num,ceo_name,ceo_num,busi_report_num,busi_num_more"
-					+ "corp_addnum,corp_add,info_ad_name,info_ad_mail";
+			this.sql = "select * from ";
 			this.ps = this.con.prepareStatement(this.sql);
 			this.rs = this.ps.executeQuery();
 			
