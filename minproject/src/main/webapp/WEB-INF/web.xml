@@ -16,4 +16,15 @@
   </servlet-mapping>
   
   
+  
+<!-- *******hp_setting********* -->
+	<servlet>
+		<servlet-name>hp_joinok</servlet-name>
+		<servlet-class>hp_setting.hp_joinok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_joinok</servlet-name>
+		<url-pattern>/hp_joinok.do</url-pattern>
+	</servlet-mapping>
+  
 </web-app>
