@@ -23,7 +23,7 @@ public class hp_insert {
 					+ ",corp_name,busi_num,ceo_name,ceo_num,busi_report_num,busi_num_more,)"
 					+ ",corp_addnum,corp_add,info_ad_name,info_ad_mail"
 					+ ",no_bank,account_num,card_pay,phone_pay,coupon_pay,pay_po_min"
-					+ ",pay_po_max,receipt,deli_corp,deli_pay,deli_day"
+					+ ",pay_po_max,receipt,deli_corp,deli_pay,deli_day)"
 					+ "values ('?','?','?','?','?','?','?','?','?','?','?','?','?'"
 					+ ",'?','?','?','?','?','?','?','?','?','?','?','?','?')";
 			this.ps = this.con.prepareStatement(this.sql);
