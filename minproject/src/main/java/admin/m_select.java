@@ -32,6 +32,7 @@ public class m_select {
 	}
 	
 	
+	//공지 테이블에 있는 전체 데이터 가져오는 메소드 
 	public ArrayList<ArrayList<String>> notice_data(){
 		try {
 			this.con = db.getConnection();
@@ -74,5 +75,45 @@ public class m_select {
 		}
 		
 		return this.alldata;
+	}
+	
+	//공지 하나의 데이터만 가져오는 메소드 
+	public ArrayList<String> notice_onedata(int nidx){
+		try {
+			this.con = db.getConnection();
+			//해당 테이블에 맞는 컬럼값을 select 
+			this.sql = "select * from notice where nidx=?";
+			this.ps = this.con.prepareStatement(this.sql);
+			this.ps.setInt(1, nidx);  
+			this.rs = this.ps.executeQuery();
+			
+			if(this.rs.next()!=false) {  //해당 조건에 맞는 데이터값이 있을때 
+				this.data = new ArrayList<String>();
+				
+				this.data.add(this.rs.getString("nidx"));
+				this.data.add(this.rs.getString("n_yn"));
+				this.data.add(this.rs.getString("n_subject"));
+				this.data.add(this.rs.getString("n_writer"));
+				this.data.add(this.rs.getString("n_filenm"));
+				this.data.add(this.rs.getString("n_file"));
+				this.data.add(this.rs.getString("n_content"));
+				this.data.add(this.rs.getString("n_view"));
+				this.data.add(this.rs.getString("n_date"));
+			}
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		} finally {
+			try {
+				this.rs.close();
+				this.ps.close();
+				this.con.close();
+				
+			} catch (Exception e2) {
+				// TODO: handle exception
+			}
+		}
+		return this.data;
+		
 	}
 }

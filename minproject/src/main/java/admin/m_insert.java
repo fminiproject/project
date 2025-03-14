@@ -26,7 +26,6 @@ public class m_insert {
 				this.ps.setString(3, n_writer);
 				this.ps.setString(4, n_content);
 				this.result = this.ps.executeUpdate(); 
-				System.out.println(this.sql);
 			
 		} catch (Exception e) {
 			this.result = null;
