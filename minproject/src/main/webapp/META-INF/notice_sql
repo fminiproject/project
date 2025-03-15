@@ -13,3 +13,4 @@ create table notice (
 
 drop table notice;
 select * from notice;
+update notice set n_yn='Y',n_subject='안녕',n_writer='관',n_content='수동수정' where nidx='45';

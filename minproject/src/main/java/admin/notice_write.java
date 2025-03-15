@@ -1,4 +1,4 @@
-package notice;
+package admin;
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -36,9 +36,9 @@ public class notice_write extends HttpServlet {
 			
 			if(n_yn==null) {
 				n_yn = "N";
-			}else {
-				n_yn = "Y";
 			}
+			//jsp파일 input태그에 value를 넣어야 체크시 해당값이 날아옴. 체크 안하면 null값이 날아옴
+			//insert할 때 n_yn 컬럼명을 기재하면 null이 들어가지만 기재안하면 디폴트값이 들어감
 			
 			long filesize = n_filenm.getSize();  //파일용량 가져옴
 			
@@ -53,7 +53,7 @@ public class notice_write extends HttpServlet {
 			if(this.result > 0) {
 				this.pw.write("<script>"
 								+"alert('공지가 등록되었습니다');"
-								+"location.href='./login.do';"
+								+"location.href='./notice_list.do';"
 								+"</script>");
 				
 			}else {
@@ -67,11 +67,7 @@ public class notice_write extends HttpServlet {
 
 		} catch (Exception e) {
 			// TODO: handle exception
-		}
-		
-		
-		
-		
+		} 
 	}
 
 }

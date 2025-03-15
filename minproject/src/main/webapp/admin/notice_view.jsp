@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>공지사항 등록 페이지</title>
+    <title>공지사항 내용 확인 페이지</title>
     <link rel="stylesheet" type="text/css" href="./css/basic.css">
     <link rel="stylesheet" type="text/css" href="./css/login.css?v=10">
     <link rel="stylesheet" type="text/css" href="./css/main.css?v=10">
@@ -15,7 +15,6 @@
     <link rel="icon" href="./img/logo.png" sizes="64x64">
     <link rel="icon" href="./img/logo.png" sizes="32x32">
     <link rel="icon" href="./img/logo.png" sizes="16x16">
-    <script src="../admin/js/jquery.js"></script>
 </head>
 <body>
 <header class="headercss">
@@ -35,10 +34,9 @@
     </div>
 
 </nav>
-
-<!-- 글작성 페이지 부분 -->
-<%@ include file="./notice_write_veiw.jsp" %>
-<!-- 글작성 페이지 부분 -->
+<!-- 글 내용보기 페이지 부분 -->
+<%@ include file="./notice_view_detail.jsp" %>
+<!-- 글 내용보기 페이지 부분 -->
 
 <footer class="main_copyright">
     <div>

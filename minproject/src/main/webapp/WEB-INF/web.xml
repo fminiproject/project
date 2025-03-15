@@ -8,12 +8,58 @@
 <!-- *******notice****** -->
   <servlet>
   	<servlet-name>notice_write</servlet-name>  
-  	<servlet-class>notice.notice_write</servlet-class>
+  	<servlet-class>admin.notice_write</servlet-class>
   </servlet>
   <servlet-mapping>  
   	<servlet-name>notice_write</servlet-name>
-  	<url-pattern>/notice/notice_write.do</url-pattern>  
+  	<url-pattern>/admin/notice_write.do</url-pattern>  
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>notice_list</servlet-name>  
+  	<servlet-class>admin.notice_list</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_list</servlet-name>
+  	<url-pattern>/admin/notice_list.do</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>notice_delete</servlet-name>  
+  	<servlet-class>admin.notice_delete</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_delete</servlet-name>
+  	<url-pattern>/admin/notice_delete.do</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>notice_view</servlet-name>  
+  	<servlet-class>admin.notice_view</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_view</servlet-name>
+  	<url-pattern>/admin/notice_view.do</url-pattern>  
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>notice_modify_view</servlet-name>  
+  	<servlet-class>admin.notice_modify_view</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_modify_view</servlet-name>
+  	<url-pattern>/admin/notice_modify_view.do</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>notice_modify</servlet-name>  
+  	<servlet-class>admin.notice_modify</servlet-class>
+  </servlet>
+  <servlet-mapping>  
+  	<servlet-name>notice_modify</servlet-name>
+  	<url-pattern>/admin/notice_modify.do</url-pattern>  
+  </servlet-mapping>
+  
   
   
 </web-app>
