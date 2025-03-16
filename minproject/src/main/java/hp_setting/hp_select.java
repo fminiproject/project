@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import admin.m_db;
 
 public class hp_select {
-	Connection con = null;
-	PreparedStatement ps = null;
-	String sql = "";
-	m_db db = new m_db();
-	ResultSet rs = null;
+	Connection con = null;			// DB에 쿼리문 넣기 위해 사용, close 해야 함
+	PreparedStatement ps = null;	// sql문을 실행하기 위해 사용, close 해야 함
+	String sql = "";				// sql 쿼리문을 작성하기 위한 변수
+	m_db db = new m_db();			// db 정보 가져옴
+	ResultSet rs = null;			// SQL 쿼리 실행 후 반환된 결과 데이터를 저장하고, 순차적으로 접근할 수 있는 방법
 	
 	ArrayList<Object> data = null;
 	ArrayList<ArrayList<Object>> alldata = null;
@@ -24,10 +24,13 @@ public class hp_select {
 			this.sql = "select * from homepage;";
 			this.ps = this.con.prepareStatement(this.sql);
 			this.rs = this.ps.executeQuery();
+//			System.out.println(this.rs);
 			
-			this.data = new ArrayList<Object>();
+			this.alldata = new ArrayList<ArrayList<Object>>();
+			
 			
 			while(this.rs.next()) {
+				this.data = new ArrayList<Object>();
 				this.data.add(this.rs.getString("hp_title"));
 				this.data.add(this.rs.getString("ad_mail"));
 				this.data.add(this.rs.getString("use_point"));
@@ -44,7 +47,7 @@ public class hp_select {
 				this.data.add(this.rs.getString("info_ad_name"));
 				this.data.add(this.rs.getString("info_ad_mail"));
 				this.data.add(this.rs.getString("no_bank"));
-				this.data.add(this.rs.getInt("account_num"));
+				this.data.add(this.rs.getLong("account_num"));
 				this.data.add(this.rs.getString("card_pay"));
 				this.data.add(this.rs.getString("phone_pay"));
 				this.data.add(this.rs.getString("coupon_pay"));
@@ -54,12 +57,15 @@ public class hp_select {
 				this.data.add(this.rs.getString("deli_corp"));
 				this.data.add(this.rs.getInt("deli_pay"));
 				this.data.add(this.rs.getString("deli_day"));
+//				System.out.println(this.data);
 				
 				this.alldata.add(this.data);
+//				System.out.println(this.alldata);
 			}
 			
 		} catch (Exception e) {
 			this.data = null;
+			e.printStackTrace();
 		}finally {
 			try {
 				this.ps.close();

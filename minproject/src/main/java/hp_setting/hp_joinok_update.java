@@ -10,29 +10,15 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/*
- * doPost 기능은 사용자가 url에 입력한 값을 나에게 전송해서(post) 저장할 때 사용
- * doGet  기능은 내가 이미 가지고 있는 데이터를 가져와(get) url로 내보낼 때 사용
- */
-
-
-// /admin/admin_siteinfo.jsp  =>  ./hp_joinok.do (hp_join 참조, 가상의 url이 같은 디렉토리 안에 만들어졌기 때문에 ./ 로 경로 설정)
-// =>   ./hp_list.do(hp_select 참조)   =>   ./admin_siteinfo_list.jsp
-
-// 순서  :  jsp(<=js)  =>  hp_joinok.do(hp_join.java 참조)  =>  hp_join.java(<=hp_insert(<=m_db))  =>  ./hp_list.do
-
-// 홈페이지에 입력된 값을 받아 hp_insert에서 insert 시킨 후 
-public class hp_joinok extends HttpServlet {
+public class hp_joinok_update extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-	PrintWriter pw = null;	// 서블렛으로 명령어 실행시키기 위해 사용		=> close 해야 함
-	hp_insert hi = new hp_insert();		// 가져온 데이터를 데이터를 DB에 insert 시킴
+	PrintWriter pw = null;
+	hp_update hu = new hp_update();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		request.setCharacterEncoding("utf-8");	// 한글이 전송되므로 사용
-		response.setContentType("text/html;charset=utf-8");		// Javascript에서 한글 사용하기 때문에 사용
+		request.setCharacterEncoding("utf-8");
+		response.setContentType("text/html;charset=utf-8");
 		
-		// jsp에 입력된 value값을 가져와서 String 변수에 넣음
-		// getParameter() 로 가져오면 다 String형이 됨
 		String hp_title = request.getParameter("hp_title");
 		String ad_mail = request.getParameter("ad_mail");
 		String use_point = request.getParameter("use_point");
@@ -59,38 +45,10 @@ public class hp_joinok extends HttpServlet {
 		String deli_corp = request.getParameter("deli_corp");
 		String deli_pay = request.getParameter("deli_pay");
 		String deli_day = request.getParameter("deli_day");
+
 		
-		/*
-		System.out.println(hp_title);
-		System.out.println(ad_mail);
-		System.out.println(use_point);
-		System.out.println(join_point);
-		System.out.println(join_lv);
-		System.out.println(corp_name);
-		System.out.println(busi_num);
-		System.out.println(ceo_name);
-		System.out.println(ceo_num);
-		System.out.println(busi_report_num);
-		System.out.println(busi_num_more);
-		System.out.println(corp_addnum);
-		System.out.println(corp_add);
-		System.out.println(info_ad_name);
-		System.out.println(info_ad_mail);
-		System.out.println(no_bank);
-		System.out.println(account_num);
-		System.out.println(card_pay);
-		System.out.println(phone_pay);
-		System.out.println(coupon_pay);
-		System.out.println(pay_po_min);
-		System.out.println(pay_po_max);
-		System.out.println(receipt);
-		System.out.println(deli_corp);
-		System.out.println(deli_pay);
-		System.out.println(deli_day);
-		*/
-		
-		// hp_insert.java에 매개변수로 위의 String 변수들을 넣음
-		int result = this.hi.hp_in(hp_title,ad_mail,use_point,join_point,join_lv,
+		// hp_update.java에 매개변수로 위의 String 변수들을 넣음
+		int result = this.hu.hp_up(hp_title,ad_mail,use_point,join_point,join_lv,
 				corp_name,busi_num,ceo_name,ceo_num,busi_report_num,busi_num_more,
 				corp_addnum,corp_add,info_ad_name,info_ad_mail,no_bank,account_num,
 				card_pay,phone_pay,coupon_pay,pay_po_min,pay_po_max,receipt,
@@ -98,7 +56,6 @@ public class hp_joinok extends HttpServlet {
 		
 		// 클라이언트에게 응답을 보내기 위해 PrintWriter 초기화 
 		this.pw = response.getWriter();
-//		System.out.println(this.pw);
 		
 		if(result == 1) {	// 삽입이 성공할 경우 성공 메시지를 알림
 			this.pw.write("<script>"

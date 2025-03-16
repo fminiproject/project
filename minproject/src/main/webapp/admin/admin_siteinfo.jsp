@@ -1,3 +1,4 @@
+<%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -18,7 +19,7 @@
     <link rel="icon" href="./img/logo.png" sizes="16x16">
 </head>
 <body>
-<form id="frm" method="post" action="./hp_joinok.do">
+<form id="frm" method="post">
 <header class="headercss">
     <div class="header_div">
         <p><img src="./img/logo.png" class="logo_sm"> ADMINISTRATOR</p>
@@ -55,8 +56,8 @@
 <ul class="info_form">
     <li>포인트 사용 유/무</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="use_point">포인트 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="use_point" checked>포인트 미사용</label></em>
+        <em><label><input type="radio" value="Y" class="ckclass" name="use_point">포인트 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="use_point" checked>포인트 미사용</label></em>
     </li>
 </ul>
 <ul class="info_form2" style="border-bottom:1px solid rgb(81, 61, 61);">
@@ -138,22 +139,22 @@
 <ul class="info_form">
     <li>신용카드 결제 사용</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="card_pay"> 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="card_pay" checked> 미사용</label></em> ※ 해당 PG사가 있을 경우 사용으로 변경합니다.
+        <em><label><input type="radio" value="Y" class="ckclass" name="card_pay"> 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="card_pay" checked> 미사용</label></em> ※ 해당 PG사가 있을 경우 사용으로 변경합니다.
     </li>
 </ul>
 <ul class="info_form">
     <li>휴대폰 결제 사용</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="phone_pay"> 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="phone_pay" checked> 미사용</label></em> ※ 주문시 휴대폰 결제를 가능하게 할 것인지를 설정합니다.
+        <em><label><input type="radio" value="Y" class="ckclass" name="phone_pay"> 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="phone_pay" checked> 미사용</label></em> ※ 주문시 휴대폰 결제를 가능하게 할 것인지를 설정합니다.
     </li>
 </ul>
 <ul class="info_form">
     <li>도서상품권 결제사용</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="coupon_pay"> 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="coupon_pay" checked> 미사용</label></em> ※ 도서상품권 결제만 적용이 되며, 그 외에 상품권은 결제 되지 않습니다.
+        <em><label><input type="radio" value="Y" class="ckclass" name="coupon_pay"> 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="coupon_pay" checked> 미사용</label></em> ※ 도서상품권 결제만 적용이 되며, 그 외에 상품권은 결제 되지 않습니다.
     </li>
 </ul>
 <ul class="info_form2">
@@ -169,8 +170,8 @@
 <ul class="info_form">
     <li>현금 영수증 발급사용</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="receipt"> 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="receipt" checked> 미사용</label></em> ※ 현금영수증 관련 사항은 PG사 가입이 되었을 경우 사용가능 합니다.
+        <em><label><input type="radio" value="Y" class="ckclass" name="receipt"> 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="receipt" checked> 미사용</label></em> ※ 현금영수증 관련 사항은 PG사 가입이 되었을 경우 사용가능 합니다.
     </li>
 </ul>
 <ul class="info_form2">
@@ -186,8 +187,8 @@
 <ul class="info_form" style="border-bottom:1px solid rgb(81, 61, 61);">
     <li>희망배송일</li>
     <li class="checkcss">
-        <em><label><input type="radio" class="ckclass" name="deli_day"> 사용</label></em> 
-        <em><label><input type="radio" class="ckclass" name="deli_day" checked> 미사용</label></em> ※ 희망배송일 사용시 사용자가 직접 설정 할 수 있습니다.
+        <em><label><input type="radio" value="Y" class="ckclass" name="deli_day"> 사용</label></em> 
+        <em><label><input type="radio" value="N" class="ckclass" name="deli_day" checked> 미사용</label></em> ※ 희망배송일 사용시 사용자가 직접 설정 할 수 있습니다.
     </li>
 </ul>
 </div>
@@ -206,5 +207,5 @@
     </div>
 </footer>
 </body>
-<script src="./js/hp_setting/admin_siteinfo.js"></script>
+<script src="./js/hp_setting/admin_siteinfo.js?v=3"></script>
 </html>

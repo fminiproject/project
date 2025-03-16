@@ -65,12 +65,42 @@
   
 <!-- *******hp_setting********* -->
 	<servlet>
-		<servlet-name>hp_joinok</servlet-name>
-		<servlet-class>hp_setting.hp_joinok</servlet-class>
+		<servlet-name>hp_joinok</servlet-name>	<!-- 참조할 servlet 파일 이름 -->
+		<servlet-class>hp_setting.hp_joinok</servlet-class>	<!-- 참조할 servlet 경로 및 class이름 -->
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>hp_joinok</servlet-name>
-		<url-pattern>/hp_joinok.do</url-pattern>
+		<servlet-name>hp_joinok</servlet-name>	<!-- 가상의 servlet 파일 이름 -->
+		<url-pattern>/admin/hp_joinok.do</url-pattern>	<!-- webapp 안의 admin 안의 hp_joinok.do 이라는 가상의 url 만듦 -->
 	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>hp_list</servlet-name>	<!-- 참조할 servlet 파일 이름 -->
+		<servlet-class>hp_setting.hp_list</servlet-class>	<!-- 참조할 servlet 경로 및 class이름 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_list</servlet-name>	<!-- 가상의 servlet 파일 이름 -->
+		<url-pattern>/admin/hp_list.do</url-pattern>	<!-- webapp 안의 admin 안의 hp_list.do 이라는 가상의 url 만듦 -->
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>hp_joinok_update</servlet-name>
+		<servlet-class>hp_setting.hp_joinok_update</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_joinok_update</servlet-name>
+		<url-pattern>/admin/hp_joinok_update.do</url-pattern>
+	</servlet-mapping>
+	
+	<!--  
+	<servlet>
+		<servlet-name>hp_update</servlet-name>
+		<servlet-class>hp_setting.hp_update</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_update</servlet-name>
+		<url-pattern>/admin/hp_update.do</url-pattern>
+	</servlet-mapping>
+	-->
+	
   
 </web-app>

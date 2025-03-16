@@ -53,7 +53,7 @@ function save_yes(){
 		alert("숫자만 입력해주세요.");
 	}else{
 		alert("해당 정보를 사이트에 반영하시겠습니까?");
-		frm.action = "./hp_joinok.do";
+		frm.action = "./hp_joinok_update.do";
 		frm.submit();
 	}
 };
