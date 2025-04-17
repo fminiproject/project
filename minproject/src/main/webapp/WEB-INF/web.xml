@@ -4,62 +4,197 @@
   
   
   
-  
-<!-- *******notice****** -->
-  <servlet>
-  	<servlet-name>notice_write</servlet-name>  
-  	<servlet-class>admin.notice_write</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_write</servlet-name>
-  	<url-pattern>/admin/notice_write.do</url-pattern>  
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>notice_list</servlet-name>  
-  	<servlet-class>admin.notice_list</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_list</servlet-name>
-  	<url-pattern>/admin/notice_list.do</url-pattern>  
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>notice_delete</servlet-name>  
-  	<servlet-class>admin.notice_delete</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_delete</servlet-name>
-  	<url-pattern>/admin/notice_delete.do</url-pattern>  
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>notice_view</servlet-name>  
-  	<servlet-class>admin.notice_view</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_view</servlet-name>
-  	<url-pattern>/admin/notice_view.do</url-pattern>  
-  </servlet-mapping>
-    
-  <servlet>
-  	<servlet-name>notice_modify_view</servlet-name>  
-  	<servlet-class>admin.notice_modify_view</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_modify_view</servlet-name>
-  	<url-pattern>/admin/notice_modify_view.do</url-pattern>  
-  </servlet-mapping>
-  
-  <servlet>
-  	<servlet-name>notice_modify</servlet-name>  
-  	<servlet-class>admin.notice_modify</servlet-class>
-  </servlet>
-  <servlet-mapping>  
-  	<servlet-name>notice_modify</servlet-name>
-  	<url-pattern>/admin/notice_modify.do</url-pattern>  
-  </servlet-mapping>
-  
+	<servlet>
+		<servlet-name>index</servlet-name>
+<!-- 		<servlet-class>travel.index</servlet-class> -->
+		<servlet-class>admin.index</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>index</servlet-name>
+		<url-pattern>/index.do</url-pattern>
+	</servlet-mapping>	
+	
+	<servlet>
+		<servlet-name>toadminlist</servlet-name>
+		<servlet-class>admin.toadminlist</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>toadminlist</servlet-name>
+		<url-pattern>/admin/toadminlist.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>idcheck</servlet-name>
+		<servlet-class>admin.idcheck</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>idcheck</servlet-name>
+		<url-pattern>/admin/idcheck.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>loginok</servlet-name>
+		<servlet-class>admin.loginok</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginok</servlet-name>
+		<url-pattern>/admin/loginok.do</url-pattern>
+	</servlet-mapping>
+
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>index</servlet-name> -->
+<!-- 		<servlet-class>admin.index</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>index</servlet-name> -->
+<!-- 		<url-pattern>/admin/index.do</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+	<servlet>
+		<servlet-name>loginout</servlet-name>
+		<servlet-class>admin.loginout</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>loginout</servlet-name>
+		<url-pattern>/admin/loginout.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>join</servlet-name>
+		<servlet-class>admin.join</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>join</servlet-name>
+		<url-pattern>/admin/join.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>tojoin</servlet-name>
+		<servlet-class>admin.tojoin</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>tojoin</servlet-name>
+		<url-pattern>/admin/tojoin.do</url-pattern>
+	</servlet-mapping>
+
+<!-- 	<servlet> -->
+<!-- 		<servlet-name>index</servlet-name> -->
+<!-- 		<servlet-class>admin.index</servlet-class> -->
+<!-- 	</servlet> -->
+<!-- 	<servlet-mapping> -->
+<!-- 		<servlet-name>index</servlet-name> -->
+<!-- 		<url-pattern>/index.do</url-pattern> -->
+<!-- 	</servlet-mapping> -->
+
+
+
+<!-- *******notice********* -->
+
+	<servlet>
+		<servlet-name>notice_write_view</servlet-name>
+		<servlet-class>notice.notice_write_view</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_write_view</servlet-name>
+		<url-pattern>/notice/notice_write_view.do</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet>
+		<servlet-name>notice_write</servlet-name>
+		<servlet-class>notice.notice_write</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_write</servlet-name>
+		<url-pattern>/notice/notice_write.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_list</servlet-name>
+		<servlet-class>notice.notice_list</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_list</servlet-name>
+		<url-pattern>/notice/notice_list.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_delete</servlet-name>
+		<servlet-class>notice.notice_delete</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_delete</servlet-name>
+		<url-pattern>/notice/notice_delete.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_view</servlet-name>
+		<servlet-class>notice.notice_view</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_view</servlet-name>
+		<url-pattern>/notice/notice_view.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_modify_view</servlet-name>
+		<servlet-class>notice.notice_modify_view</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_modify_view</servlet-name>
+		<url-pattern>/notice/notice_modify_view.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_modify</servlet-name>
+		<servlet-class>notice.notice_modify</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_modify</servlet-name>
+		<url-pattern>/notice/notice_modify.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>notice_search</servlet-name>
+		<servlet-class>notice.notice_search</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>notice_search</servlet-name>
+		<url-pattern>/notice/notice_search.do</url-pattern>
+	</servlet-mapping>
+
+<!-- *******hp_setting********* -->
+	<servlet>
+		<servlet-name>hp_joinok</servlet-name>	<!-- 참조할 servlet 파일 이름 -->
+		<servlet-class>hp_setting.hp_joinok</servlet-class>	<!-- 참조할 servlet 경로 및 class이름 -->
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_joinok</servlet-name>
+		<url-pattern>/hp_setting/hp_joinok.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hp_list</servlet-name>
+		<servlet-class>hp_setting.hp_list</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_list</servlet-name>
+		<url-pattern>/hp_setting/hp_list.do</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>hp_joinok_update</servlet-name>
+		<servlet-class>hp_setting.hp_joinok_update</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>hp_joinok_update</servlet-name>
+		<url-pattern>/hp_setting/hp_joinok_update.do</url-pattern>
+	</servlet-mapping>
+
+	<!-- <servlet> <servlet-name>hp_update</servlet-name> <servlet-class>hp_setting.hp_update</servlet-class> 
+		</servlet> <servlet-mapping> <servlet-name>hp_update</servlet-name> <url-pattern>/hp_setting/hp_update.do</url-pattern> 
+		</servlet-mapping> -->
+
   
   
 </web-app>

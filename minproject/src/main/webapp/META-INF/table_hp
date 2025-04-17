@@ -1,0 +1,196 @@
+create table table_hp_join(
+	hidx int unsigned auto_increment,
+	hp_title varchar(100) not null,
+	ad_mail varchar(50) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point int not null,
+	join_lv int not null,
+	primary key(hidx)
+);
+
+create table table_hp_basic(
+	bidx int unsigned auto_increment,
+	corp_name varchar(20) not null,
+	busi_num int not null,
+	ceo_name char(5) not null,
+	ceo_num int not null,
+	busi_report_num int not null,
+	busi_num_more int not null,
+	corp_addnum int not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(5) not null,
+	info_ad_mail char(5) not null,
+	primary key(bidx)
+)
+
+create table table_pay_basic(
+	pidx int unsigned auto_increment,
+	no_bank int null,
+	account_num int null,
+	card_pay enum('U','N') not null default 'N',
+	phone_pay enum('U','N') not null default 'N',
+	coupon_pay enum('U','N') not null default 'N',
+	pay_po_min int not null,
+	pay_po_max int not null,
+	receipt enum('U','N') not null default 'N',
+	deli_corp varchar(20) not null,
+	deli_pay int not null,
+	deli_day enum('U','N') not null default 'N',
+	joindate timestamp not null default current_timestamp,
+	primary key(pidx)
+);
+
+
+create table homepage(
+	hp_title varchar(100) not null,
+	ad_mail varchar(50) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point char(5) not null,
+	join_lv char(1) not null,
+	corp_name varchar(20) not null,
+	busi_num char(20) not null,
+	ceo_name char(5) not null,
+	ceo_num char(20) not null,
+	busi_report_num char(30) not null,
+	busi_num_more char(20) not null,
+	corp_addnum char(5) not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(5) not null,
+	info_ad_mail char(5) not null,
+	no_bank char(30) null,
+	account_num char(20) null,
+	card_pay enum('Y','N') not null default 'N',
+	phone_pay enum('Y','N') not null default 'N',
+	coupon_pay enum('Y','N') not null default 'N',
+	pay_po_min char(10) not null,
+	pay_po_max char(10) not null,
+	receipt enum('Y','N') not null default 'N',
+	deli_corp varchar(20) not null,
+	deli_pay char(10) not null,
+	deli_day enum('Y','N') not null default 'N'
+);
+
+
+create table homepage(
+	hp_title varchar(100) not null,
+	ad_mail varchar(100) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point char(50) not null,
+	join_lv char(1) not null,
+	corp_name varchar(50) not null,
+	busi_num char(50) not null,
+	ceo_name char(20) not null,
+	ceo_num char(20) not null,
+	busi_report_num char(30) not null,
+	busi_num_more char(20) not null,
+	corp_addnum char(5) not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(5) not null,
+	info_ad_mail char(5) not null,
+	no_bank char(50) not null,
+	account_num char(50) not null,
+	card_pay enum('Y','N') not null default 'N',
+	phone_pay enum('Y','N') not null default 'N',
+	coupon_pay enum('Y','N') not null default 'N',
+	pay_po_min char(50) not null,
+	pay_po_max char(50) not null,
+	receipt enum('Y','N') not null default 'N',
+	deli_corp varchar(100) not null,
+	deli_pay char(50) not null,
+	deli_day enum('Y','N') not null default 'N'
+);
+
+create table homepage(
+	hp_title varchar(100) not null,
+	ad_mail varchar(100) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point int not null,
+	join_lv int not null,
+	corp_name varchar(50) not null,
+	busi_num char(50) not null,
+	ceo_name char(20) not null,
+	ceo_num char(20) not null,
+	busi_report_num char(30) not null,
+	busi_num_more char(20) not null,
+	corp_addnum char(5) not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(5) not null,
+	info_ad_mail char(5) not null,
+	no_bank char(50) not null,
+	account_num int not null,
+	card_pay enum('Y','N') not null default 'N',
+	phone_pay enum('Y','N') not null default 'N',
+	coupon_pay enum('Y','N') not null default 'N',
+	pay_po_min int not null,
+	pay_po_max int not null,
+	receipt enum('Y','N') not null default 'N',
+	deli_corp varchar(100) not null,
+	deli_pay int not null,
+	deli_day enum('Y','N') not null default 'N'
+);
+
+
+create table homepage(
+	hp_title varchar(100) not null,
+	ad_mail varchar(100) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point int not null,
+	join_lv int not null,
+	corp_name varchar(50) not null,
+	busi_num char(50) not null,
+	ceo_name char(20) not null,
+	ceo_num char(20) not null,
+	busi_report_num char(30) not null,
+	busi_num_more char(20) not null,
+	corp_addnum char(30) not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(50) not null,
+	info_ad_mail varchar(100) not null,
+	no_bank char(50) not null,
+	account_num int not null,
+	card_pay enum('Y','N') not null default 'N',
+	phone_pay enum('Y','N') not null default 'N',
+	coupon_pay enum('Y','N') not null default 'N',
+	pay_po_min int not null,
+	pay_po_max int not null,
+	receipt enum('Y','N') not null default 'N',
+	deli_corp varchar(100) not null,
+	deli_pay int not null,
+	deli_day enum('Y','N') not null default 'N'
+);
+
+
+create table homepage(
+	hp_title varchar(100) not null,
+	ad_mail varchar(100) not null,
+	use_point enum('Y','N') not null default 'N',
+	join_point int not null,
+	join_lv int not null,
+	corp_name varchar(50) not null,
+	busi_num char(50) not null,
+	ceo_name char(20) not null,
+	ceo_num char(20) not null,
+	busi_report_num char(30) not null,
+	busi_num_more char(20) not null,
+	corp_addnum char(30) not null,
+	corp_add varchar(50) not null,
+	info_ad_name char(50) not null,
+	info_ad_mail varchar(100) not null,
+	no_bank char(50) not null,
+	account_num BIGINT not null,
+	card_pay enum('Y','N') not null default 'N',
+	phone_pay enum('Y','N') not null default 'N',
+	coupon_pay enum('Y','N') not null default 'N',
+	pay_po_min int not null,
+	pay_po_max int not null,
+	receipt enum('Y','N') not null default 'N',
+	deli_corp varchar(100) not null,
+	deli_pay int not null,
+	deli_day enum('Y','N') not null default 'N'
+);
+
+
+drop table table_hp_basic;
+drop table table_hp_join;
+drop table table_pay_basic;
+drop table homepage;

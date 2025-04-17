@@ -3,117 +3,156 @@ package admin;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
+
+import common.m_db;
 
 public class m_select {
 	Connection con = null;
 	PreparedStatement ps = null;
-	ResultSet rs = null; 
-	
-	String sql="";  
-	ArrayList<String> data = null;  //각 컬럼별 값을 저장 
-	ArrayList<ArrayList<String>> alldata = null;  //데이터베이스 전체 데이터 
-	
-	int page = 0;  //첫번째 배열 노드
-	int ea = 5; //한페이지당 나타내는 게시물 수 (=>3개) 
-	
+	ResultSet rs = null;
+	String sql = null;
+	String result = null;
 	m_db db = new m_db();
-	
-	public m_select(int p) {
-		if(p>0) {  //1번 페이징 번호 외에 다른 번호를 클릭했을 때 
-			
-			this.page= (p - 1)*ea; //sql 쿼리문에서 limit를 사용하기위함
-			//(페이지번호 - 1)*한페이지당 출력할 개수  
-		}
-		else {
-			this.page= p; 
-		}
-	}
+	dto_member dto = new dto_member();
+	ArrayList<String> data = null;
+	ArrayList<ArrayList<String>> alldata = null;
+
+
 	
 	
-	//공지 테이블에 있는 전체 데이터 가져오는 메소드 
-	public ArrayList<ArrayList<String>> notice_data(){
+	public ArrayList<ArrayList<String>> memberlist() {
 		try {
-			this.con = db.getConnection();
-			
-			this.sql = "select nidx, n_subject, n_writer, n_view, n_date, "
-					+ "(select count(*) from notice) as total from notice "
-					+ "order by nidx desc limit ?,?";  //기본은 limit0,3
+			this.con = this.db.getConnection();
+			this.sql = "select * from member order by midx desc";
 			this.ps = this.con.prepareStatement(this.sql);
-			this.ps.setInt(1, this.page);
-			this.ps.setInt(2, this.ea);
 			this.rs = this.ps.executeQuery();
-			
+			System.out.println("ResultSet" + this.rs);
 			this.alldata = new ArrayList<ArrayList<String>>();
 			
-			while(this.rs.next()) {
+			while (this.rs.next()) {
 				this.data = new ArrayList<String>();
-				this.data.add(this.rs.getString("nidx"));
-				this.data.add(this.rs.getString("n_subject"));
-				this.data.add(this.rs.getString("n_writer"));
-				this.data.add(this.rs.getString("n_view"));
-				this.data.add(this.rs.getString("n_date"));
-				this.data.add(this.rs.getString("total"));
+				this.data.add(String.valueOf(this.rs.getInt("midx")));
+				this.data.add(this.rs.getString("mid"));
+				this.data.add(this.rs.getString("mpass"));
+				this.data.add(this.rs.getString("mname"));
+				this.data.add(this.rs.getString("memail"));
+				this.data.add(this.rs.getString("mtel"));
+				this.data.add(this.rs.getString("mpart"));
+				this.data.add(this.rs.getString("mposition"));
+				
+				String date = this.rs.getString("mdate");
+				SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+				Date d = sdf.parse(date);
+				String mdate = sdf.format(d);
+
+				this.data.add(mdate);
+				this.data.add(this.rs.getString("verified"));
 				
 				this.alldata.add(this.data);
+
 			}
+			System.out.println("select 모델" + this.alldata);
+
 			
 		} catch (Exception e) {
-			this.alldata = null;
-			e.printStackTrace();
+			return null;
 			
 		} finally {
 			try {
 				this.rs.close();
 				this.ps.close();
 				this.con.close();
-				
-			} catch (SQLException e) {
-				this.alldata = null;
+			} catch (Exception e2) {
 			}
 		}
-		
+
 		return this.alldata;
 	}
 	
-	//공지 하나의 데이터만 가져오는 메소드 
-	public ArrayList<String> notice_onedata(int nidx){
+	
+	public String login(dto_member dm) {
 		try {
-			this.con = db.getConnection();
-			//해당 테이블에 맞는 컬럼값을 select 
-			this.sql = "select * from notice where nidx=?";
+			this.con = this.db.getConnection();
+			this.sql = "select mid,mpass,mname,verified from member where mid=? and mpass=?";
 			this.ps = this.con.prepareStatement(this.sql);
-			this.ps.setInt(1, nidx);  
+			
+			this.ps.setString(1, dm.getMid());
+			this.ps.setString(2, dm.getMpass());
+			
 			this.rs = this.ps.executeQuery();
 			
-			if(this.rs.next()!=false) {  //해당 조건에 맞는 데이터값이 있을때 
-				this.data = new ArrayList<String>();
+			if (this.rs.next()) { // 아이디 비밀번호 일치
+				this.dto.setMid(this.rs.getString("mid"));
+				this.dto.setMpass(this.rs.getString("mpass"));
+				this.dto.setMname(this.rs.getString("mname"));
+				this.dto.setVerified(this.rs.getString("verified"));
 				
-				this.data.add(this.rs.getString("nidx"));
-				this.data.add(this.rs.getString("n_yn"));
-				this.data.add(this.rs.getString("n_subject"));
-				this.data.add(this.rs.getString("n_writer"));
-				this.data.add(this.rs.getString("n_filenm"));
-				this.data.add(this.rs.getString("n_file"));
-				this.data.add(this.rs.getString("n_content"));
-				this.data.add(this.rs.getString("n_view"));
-				this.data.add(this.rs.getString("n_date"));
+
+				if(this.dto.getVerified().equals("Y")) {
+					this.result = "ok";
+				} else {
+					this.result = "disapproval";
+				}
+			} else { //아이디 비밀번호 불일치 or null
+				this.result = "false";
 			}
-			
+
 		} catch (Exception e) {
-			// TODO: handle exception
+			this.result = "false";
 		} finally {
 			try {
 				this.rs.close();
 				this.ps.close();
 				this.con.close();
-				
 			} catch (Exception e2) {
-				// TODO: handle exception
 			}
 		}
-		return this.data;
-		
+		System.out.println(this.result);
+		return this.result;
+
 	}
+	
+	
+	public String idcheck (String a) {
+		try {
+			String mid = a;
+			
+			this.con = this.db.getConnection();
+			this.sql = "select mid from member where mid=?";
+			this.ps = this.con.prepareStatement(this.sql);
+			
+			this.ps.setString(1, mid);
+			
+			this.rs = this.ps.executeQuery();
+			
+			//next()는 true false 반환 검색할 게 한 개인 경우 while 불필요
+			//중복체크는 단순 검사라 getstring 불필요
+			
+			if (this.rs.next()) {  //아이디가 있다면
+				this.result = "false";
+				
+			} else { //아이디가 없다면
+				this.result = "ok";
+			}
+			
+		} catch (Exception e) {
+			this.result = "false";
+		} finally {
+			try {
+				this.rs.close();
+				this.ps.close();
+				this.con.close();
+			} catch (Exception e2) {
+			}
+		}
+
+		return this.result;
+	}
+	
+	
+	
+	
 }
