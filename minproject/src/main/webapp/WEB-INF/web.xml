@@ -3,7 +3,7 @@
   <display-name>minproject</display-name>
   
   
-  
+<!-- *******admin********* -->
 	<servlet>
 		<servlet-name>index</servlet-name>
 <!-- 		<servlet-class>travel.index</servlet-class> -->
@@ -195,6 +195,33 @@
 		</servlet> <servlet-mapping> <servlet-name>hp_update</servlet-name> <url-pattern>/hp_setting/hp_update.do</url-pattern> 
 		</servlet-mapping> -->
 
+<!-- *******product********* -->  
+<!--   <servlet> -->
+<!-- 	  <servlet-name>index</servlet-name> -->
+<!-- 	  <servlet-class>travel.index</servlet-class> -->
+<!--   </servlet> -->
+<!--   <servlet-mapping> -->
+<!-- 	  <servlet-name>index</servlet-name> -->
+<!-- 	  <url-pattern>/index.do</url-pattern> -->
+<!--   </servlet-mapping> -->
   
+  <servlet>
+  	<servlet-name>product_write</servlet-name>
+  	<servlet-class>product.product_write</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>product_write</servlet-name>
+  	<url-pattern>/product/product_write.do</url-pattern>
+  </servlet-mapping>
+    
+  <servlet>
+  	<servlet-name>a_product_listok</servlet-name>
+  	<servlet-class>product.a_product_listok</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>a_product_listok</servlet-name>
+  	<url-pattern>/product/a_product_listok.do</url-pattern>
+  </servlet-mapping> 
+
   
 </web-app>
