@@ -113,7 +113,7 @@
 			<div class="bottom_div">
 				<div class="search_div">
 					<input type="text" name="n_search" value="<%=keyword%>">
-					<img src="../admin/ico/search.svg" onclick="go_search();">
+					<img src="../common/ico/search.svg" onclick="go_search();">
 				</div>
 				<div class="board_btn">
 					<button type="button" class="border_del" onclick="notice_delete();">공지삭제</button>
@@ -124,8 +124,8 @@
 	
 			<div class="border_page">
 				<ul class="pageing">
-					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=1"><li><img src="../admin/ico/double_left.svg"></li></a>
-					<a href="./notice_search.do?pageNo=#"><li><img src="../admin/ico/left.svg"></li></a>
+					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=1"><li><img src="../common/ico/double_left.svg"></li></a>
+					<a href="#"><li><img src="../common/ico/left.svg"></li></a>
 					<%
 					int ww = 1;
 					while (ww <= pg) {
@@ -135,8 +135,8 @@
 						ww++;
 					}
 					%>
-					<a href="./notice_search.do?pageNo=#"><li><img src="../admin/ico/right.svg"></li></a>
-					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=<%=pg%>"><li><img src="../admin/ico/double_right.svg"></li></a>
+					<a href="#"><li><img src="../common/ico/right.svg"></li></a>
+					<a href="./notice_search.do?n_search=<%=keyword%>&pageNo=<%=pg%>"><li><img src="../common/ico/double_right.svg"></li></a>
 				</ul>
 			</div>
 		</section>

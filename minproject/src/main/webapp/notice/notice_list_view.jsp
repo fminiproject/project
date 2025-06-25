@@ -124,7 +124,7 @@
 			<div class="border_page">
 				<ul class="pageing">
 					<a href="./notice_list.do?pageNo=1"><li><img src="../common/ico/double_left.svg"></li></a>
-					<a href="./notice_list.do?pageNo=#"><li><img src="../common/ico/left.svg"></li></a>
+					<a href="#"><li><img src="../common/ico/left.svg"></li></a>
 					<%
 					int ww = 1;
 					while (ww <= pg) {
@@ -134,7 +134,7 @@
 						ww++;
 					}
 					%>
-					<a href="./notice_list.do?pageNo=#"><li><img src="../common/ico/right.svg"></li></a>
+					<a href="#"><li><img src="../common/ico/right.svg"></li></a>
 					<a href="./notice_list.do?pageNo=<%=pg%>"><li><img src="../common/ico/double_right.svg"></li></a>
 				</ul>
 			</div>

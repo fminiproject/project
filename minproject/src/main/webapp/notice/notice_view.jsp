@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>공지사항 내용 확인 페이지</title>
-    <link rel="stylesheet" type="text/css" href="../common/css/basic.css?v=4">
-    <link rel="stylesheet" type="text/css" href="../common/css/login.css?v=12">
-    <link rel="stylesheet" type="text/css" href="../common/css/main.css?v=12">
-    <link rel="stylesheet" type="text/css" href="../common/css/notice.css?v=13">
+    <link rel="stylesheet" type="text/css" href="../common/css/basic.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/login.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/main.css">
+    <link rel="stylesheet" type="text/css" href="../common/css/notice.css">
     <link rel="icon" href="../common/img/logo.png" sizes="128x128">
     <link rel="icon" href="../common/img/logo.png" sizes="64x64">
     <link rel="icon" href="../common/img/logo.png" sizes="32x32">

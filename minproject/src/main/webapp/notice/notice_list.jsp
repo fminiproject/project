@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../common/css/basic.css?v=3">
     <link rel="stylesheet" type="text/css" href="../common/css/login.css?v=12">
     <link rel="stylesheet" type="text/css" href="../common/css/main.css?v=12">
-    <link rel="stylesheet" type="text/css" href="../common/css/notice.css?v=15">
+    <link rel="stylesheet" type="text/css" href="../common/css/notice.css?v=16">
     <link rel="icon" href="../common/img/logo.png" sizes="128x128">
     <link rel="icon" href="../common/img/logo.png" sizes="64x64">
     <link rel="icon" href="../common/img/logo.png" sizes="32x32">
