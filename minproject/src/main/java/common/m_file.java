@@ -15,8 +15,8 @@ public class m_file {
 		if(file!=null && this.filesize !=0) {  //첨부파일이 있으면 
 			this.filenm = file.getSubmittedFileName();  //파일명 가져옴
 			this.url = req.getServletContext().getRealPath(save);  
-//			System.out.println(this.url);
-			//첨부파일 저장될 경로 지정 (D:\Choong402A\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\travel\)
+			System.out.println(this.url);
+			//첨부파일 저장될 경로 지정 (D:\fminiproject\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\minproject\notice_file\)
 			
 			file.write(this.url+this.filenm);  //파일 저장
 			

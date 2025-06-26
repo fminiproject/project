@@ -58,12 +58,12 @@
 				<ol style="background-color:grey;">
 					<li><input type="checkbox" name="n_ch" value="<%=notice_top.get(t).get(0)%>" onclick="choice_ck();"></li>
 					<li>  <!-- 글번호 -->
-						<img src="../admin/ico/fire.svg" class="fileicon">
+						<img src="../common/ico/fire.svg" class="fileicon">
 					</li> 
 					
 					<li> <!-- 첨부파일표시 -->
 					<% 	if(notice_top.get(t).get(7) != null){%>  <!-- 첨부파일 있으면 -->
-						<img src="../admin/ico/paperclip.svg" class="fileicon">
+						<img src="../common/ico/paperclip.svg" class="fileicon">
 					<% 	} %>
 					</li>  
 					<li onclick="notice_view(<%=notice_top.get(t).get(0)%>)" title="<%=notice_top.get(t).get(2)%>" class="cc">
@@ -89,7 +89,7 @@
 					<li><%=total%></li> <!-- 글번호 -->
 					<li> <!-- 첨부파일표시 -->
 					<% 	if(s_notice.get(w).get(7) != null){%>  <!-- 첨부파일 있으면 -->
-						<img src="../admin/ico/paperclip.svg" class="fileicon">
+						<img src="../common/ico/paperclip.svg" class="fileicon">
 					<% 	} %>
 					</li> 
 					<li onclick="notice_view(<%=s_notice.get(w).get(0)%>)" title="<%=s_notice.get(w).get(2)%>">
