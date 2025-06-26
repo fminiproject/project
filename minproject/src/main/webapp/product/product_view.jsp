@@ -23,7 +23,6 @@ if(total_page != null && !total_page.equals(null)){
 	String nocom = total_page.replace(",", "");
 	float pg2 = Integer.parseInt(nocom) / (float) aa;
 	pg = (int)Math.ceil(pg2); 
-	System.out.println("이거 출력됨?"+pg);
 }
 
 /*
@@ -49,9 +48,6 @@ if (pno == null || pno.isEmpty()) {
         pageNo = 1;
     }
 }
-
-
-
 
 %>
 <!DOCTYPE html>
